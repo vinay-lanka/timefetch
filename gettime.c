@@ -55,8 +55,20 @@ int main(void)
   }
   else {
     // printf("%s\n", chunk.memory);
-    for(int i=66;i<74;i++){
-      printf("%c", chunk.memory[i]);
+    for(int i=0;i<200;i++){
+      if(chunk.memory[i]==':' && chunk.memory[i-1]=='e' && chunk.memory[i-2]=='m' && chunk.memory[i-8]=='d'){
+        printf("Date : ");
+        for(int j=i+2;j<i+12;j++){
+          printf("%c", chunk.memory[j]);
+        }
+        printf("\n");
+        printf("Time : ");
+        for(int j=i+13;j<i+21;j++){
+          printf("%c", chunk.memory[j]);
+        }
+        printf("\n");
+        break;
+      }
     }
     // printf("\n%lu bytes retrieved\n", (unsigned long)chunk.size);
   }
